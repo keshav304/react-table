@@ -1,57 +1,40 @@
-/* Table Styles */
 table {
-    width: 100%;
+    width: 75%;
     border-collapse: collapse;
     margin-bottom: 20px;
-    font-size: 14px;
+    background-color: black;
+    font-family: Roboto, sans-serif;
+    color: #cccccc;
+    border-radius: 4px;
+    animation: fadeIn 1s ease-in-out;
+    margin: auto;
   }
-  
   table th,
   table td {
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #cccccc;
     text-align: left;
+    transition: all 0.2s ease-in-out;
+    color: #777;
   }
+  
   
   table th {
-    background-color: #f2f2f2;
-  }
-  
-  /* Input Styles */
-  input[type="number"] {
-    width: 60px;
-    padding: 5px;
-  }
-  
-  /* Button Styles */
-  button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 14px;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #25252b;
+    font-weight: 600;
+    color: #cccccc;
+    animation: 1s ease-in-out;
     cursor: pointer;
   }
   
-  button:hover {
-    background-color: #0056b3;
+  
+  .table-image-small {
+    width: 50px;
+    height: auto;
+    border-radius: 50%;
   }
   
-  /* Loading Styles */
-  .loading {
-    text-align: center;
-    font-size: 18px;
-    padding: 20px;
-  }
-  /* Inside TableComponent.css */
-.table-image-small {
-    width: 50px; /* Adjust the width as needed */
-    height: auto;
-  }
-
-  /* Inside style.css */
-.price-cell {
+  .price-cell {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -75,10 +58,69 @@ table {
     font-size: 14px;
     cursor: pointer;
     border-radius: 4px;
+    animation: slide 1s ease-in-out;
+    cursor: pointer;
   }
   
   .reset-button {
     background-color: #f44336;
   }
   
+  .loading {
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+  }
   
+  .table-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+
+  
+  @keyframes slide {
+    0% {
+      left: 0;
+    }
+    100% {
+      left: 10px;
+    }
+  }
+  
+  .table-header {
+    background-color: #ffffff;
+    border-bottom: 2px solid #000;
+  }
+  
+  .table-body {
+    padding-top: 20px;
+  }
+  
+  .table-body tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+
+  
+  table tr:hover {
+    background-color: #25252b;
+    color: #fff;
+  }
+  table tr:hover td {
+    color: #fff;
+  }
