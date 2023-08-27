@@ -9,7 +9,8 @@ import productRoutes from './routes/product.js';
 const app = express();
 dotenv.config();
 
-app.use(cors());
+app.use(cors({origin:"https://react-table-investfx.vercel.app"}));
+
 
 // app middleware
 //morgan used for logging
