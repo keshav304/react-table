@@ -67,7 +67,7 @@ export const deleteProduct = async (req, res) => {
 export const getProductsByCategory = async(req, res) => {
   try {
     const groupedbycategory = await Products.aggregate([
-      { $group: { _id: "$category", marks: { $sum: 1 } } }
+      { $group: { _id: "$category" } }
     ])
   res.status(200).json(groupedbycategory);
   } catch (error) {
