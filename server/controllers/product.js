@@ -63,3 +63,14 @@ export const deleteProduct = async (req, res) => {
   res.json({ message: "Product Deleted Successfully" });
 };
 
+
+export const getProductsByCategory = async(req, res) => {
+  try {
+    const groupedbycategory = await Products.aggregate([
+      { $group: { _id: "$category" } }
+    ])
+  res.status(200).json(groupedbycategory);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
